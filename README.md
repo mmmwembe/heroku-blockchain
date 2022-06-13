@@ -1,1 +1,10 @@
 # heroku-blockchain
+
+# Example Heroku Nodejs App
+ https://github.com/zemse/kickchainer
+
+ # 
+ https://web3.hashnode.com/what-is-web3js-an-introduction-into-the-web3js-libraries
+
+
+
