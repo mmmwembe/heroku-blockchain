@@ -9,7 +9,7 @@
  # npm module installations
  npm install web3
  npm install body-parser
- npm install express
+ npm install --save express
 
 
 
