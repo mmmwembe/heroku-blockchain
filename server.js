@@ -15,5 +15,5 @@ app.get('/', function(req, res){
 app.get('/main', function(req, res) {
     var first_name = 'Michael';
     var last_name = 'Mwembeshi'
-    res.render(__dirname + "/templates/main.html", {first_name:first_name, last_name: last_name });
+    res.render(__dirname + "templates/main.html", {first_name:first_name, last_name: last_name });
   });
