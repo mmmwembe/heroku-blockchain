@@ -1,16 +1,9 @@
-var express = require('express');
-var app = express();
+const http = require('http')
+const fs = require('fs')
 
-// set the view engine to ejs
-app.set('view engine', 'ejs');
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'content-type': 'text/html' })
+  fs.createReadStream('templates/index.html').pipe(res)
+})
 
-// use res.render to load up an ejs view file
-
-// index page
-app.get('/', function(req, res) {
-  res.render('page');
-});
-
-
-app.listen(8080);
-console.log('Server is listening on port 8080');
+server.listen(process.env.PORT || 3000)
