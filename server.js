@@ -4,7 +4,7 @@ const path = require("path");
 const router = express.Router();
 
 app.set("view engine", "ejs");
-// app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "views"));
 
 router.get("/", (req, res) => {
   res.render("index");
