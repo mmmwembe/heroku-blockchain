@@ -10,6 +10,7 @@
  npm install web3
  npm install body-parser
  npm install --save express
+ npm install --ejs
 
 
 
