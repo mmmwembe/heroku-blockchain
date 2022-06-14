@@ -1,19 +1,20 @@
-var bodyParser = require('body-parser');
-var express = require('express');
-var app = express();
+const express = require("express");
+const app = express();
+const path = require("path");
+const router = express.Router();
 
-app.use(express.static(__dirname + '/'));
-app.use(bodyParser.urlencoded({extend:true}));
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
-app.set('views', __dirname);
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "views"));
 
-app.get('/', function(req, res){
-    res.render('/templates/index.html',{email:'mmm111@hotmail.com',password:'password'});
+router.get("/", (req, res) => {
+  res.render("index");
 });
 
-app.get('/main', function(req, res) {
-    var first_name = 'Michael';
-    var last_name = 'Mwembeshi'
-    res.render("/templates/main.html", {first_name:first_name, last_name: last_name });
-  });
+router.get("/about", (req, res) => {
+  res.render("about", { title: "Hey", message: "Hello there!" });
+});
+
+app.use("/", router);
+app.listen(process.env.port || 3000);
+
+console.log("Running at Port 3000");
